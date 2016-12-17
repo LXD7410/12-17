@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="cat">猫</button>
+	<button id="dog">狗</button>
+	<button id="sheep">羊</button>
+
+	<script>
+		//业务逻辑
+		function Animal(){}
+
+		Animal.prototype = {
+			type:"",
+			name:"",
+			shoutNumber:3,
+			shoutStr:"",
+			shout:function(){
+				var str = ""
+				for(var i = 0;i<this.shoutNumber;i++){
+					str += this.shoutStr;
+				}
+				alert("我是" + this.type + this.name + str);
+			},
+		}
+
+		function Cat(){};
+		Cat.prototype.catchMouse = function(){
+			alert("捉老鼠！");
+		}
+
+
+		function Dog(){};
+		function Sheep(){};
+
+		Cat.prototype = new Animal();
+
+		Dog.prototype = new Animal();
+		Sheep.prototype = new Animal();
+
+		var cat = new Cat();
+		// cat.shoutNumber = 10;
+		cat.type = "小猫";
+		cat.name = "S";
+		cat.shoutStr = "喵！";
+
+		var dog = new Dog();
+		dog.type = "小狗";
+		dog.name = "L";
+		dog.shoutStr = "汪！";
+
+		var sheep = new Sheep();
+		sheep.type = "小羊";
+		sheep.name = "M";
+		sheep.shoutStr = "咩！"
+
+
+
+
+
+
+		//界面逻辑
+		var catBtn = document.querySelector("#cat");
+		catBtn.onclick = function(){
+			cat.shout();
+		}
+		var dogBtn = document.querySelector("#dog");
+		dogBtn.onclick = function(){
+			dog.shout();
+		}
+		var sheepBtn = document.querySelector("#sheep");
+		sheepBtn.onclick = function(){
+			sheep.shout();
+		}
+
+	</script>
+</body>
+</html>

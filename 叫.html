@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input class="num" type="text">
+	<button class="btn">猫叫</button>
+	<input class="num" type="text">
+	<button class="btn">狗叫</button>
+	<input class="num" type="text">
+	<button class="btn">鸟叫</button>
+	<script>
+		var btn = document.querySelectorAll(".btn");
+		btn.onclick = function  () {
+			var name = btn.textConte;
+			console.log(name);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Animal (name) {
+			this.name = name;
+		};
+		// Animal.prototype.shout = function() {
+	
+		// 	alert("hello prototype")
+		// };
+		Animal.prototype = {
+			"number":3,
+			"shout":function  () {
+				alert("hello prototype");
+				return this;
+			},
+			"sayName":function (){
+				alert("我是" + this.name);
+				return this;
+			}
+		}
+		// 原型属性方法
+		var dog = new Animal("L");
+		var cat = new Animal("s");
+		dog.sayName().shout();
+		// 链式操作
+		dog.number = 7;
+		console.log(dog.number);
+		console.log(cat.number);
+	</script>
+</body>
+</html>

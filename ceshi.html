@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button class="Btn">叫</button>
+	
+	<input class="aAame" type="text">
+	<input class="num" type="text">
+	<script>
+		var btn = document.querySelector(".Btn");
+		btn.onclick = function () {
+			var aAame = document.querySelector(".aAame");
+			var name = aAame.value;
+			console.log(name);
+			var num = document.querySelector(".num");
+			var value = num.value;
+			console.log(value);
+			var shout = "";
+			if (name == "猫") {
+				for (var i = 0; i < value; i++) {
+					shout +="喵！"
+					console.log(shout);
+				}
+					alert(shout);
+				}else if(name == "狗"){
+					for (var i = 0; i < value; i++) {
+					shout +="旺！"}
+					alert(shout);
+				}else if(name == "羊"){
+					for (var i = 0; i < value; i++) {
+					shout +="羊！"}
+					alert(shout);
+				}
+			
+			
+		}
+	</script>
+</body>
+</html>

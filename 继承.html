@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		Object.prototype.show = function(){
+			console.log("原型属性方法；");
+		}
+		function Animal (name) {
+			this.name = name;
+		};
+		Animal.prototype = {
+			"shout":function(str){
+				alert(str);
+			},
+			"sayName":function(){
+				console.log("我是" + this.name);
+			}
+		};
+		function Cat (name) {
+			this.name = name;
+		};
+		Cat.prototype = new Animal("L");
+		var cat = new Cat("S");
+		cat.shout("喵");
+		cat.sayName();
+		cat.show();
+	</script>
+</body>
+</html>
